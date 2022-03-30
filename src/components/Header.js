@@ -1,9 +1,28 @@
-import React from 'react'
+import React from "react"
 
-function todos() {
+const Header = () => {
+  const headerStyle = {
+    padding: "20px 0",
+    lineHeight: "1.5em",
+  }
+
   return (
-    <h1>todos</h1>
+    <header style={headerStyle}>
+      <h1
+        style={{
+          fontSize: "6rem",
+          fontWeight: "600",
+          marginBottom: "2rem",
+          lineHeight: "1em",
+          color: "#ececec",
+          textTransform: "lowercase",
+          textAlign: "center",
+        }}
+      >
+        My todos
+      </h1>
+    </header>
   )
 }
 
-export default todos
+export default Header
