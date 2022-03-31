@@ -68,6 +68,17 @@ class TodoContainer extends Component {
     });
   };
 
+  setUpdate = (updatedTitle, id) => {
+  this.setState({
+    todos: this.state.todos.map(todo => {
+      if (todo.id === id) {
+        todo.title = updatedTitle
+      }
+      return todo
+    }),
+  })
+}
+
   render() {
     return (
       <div className="container">
@@ -78,6 +89,7 @@ class TodoContainer extends Component {
             todos={this.state.todos}
             handleChangeProps={this.handleChange}
             deleteTodoProps={this.delTodo}
+            setUpdate={this.setUpdate}
           />
         </div>
       </div>
@@ -86,3 +98,26 @@ class TodoContainer extends Component {
 }
 
 export default TodoContainer
+
+
+  
+  // componentDidMount() {
+  //   let temp = localStorage.getItem("todos")
+  //   let loadedTodos = JSON.parse(temp)
+  //   if (loadedTodos) {
+  //     this.setState({
+  //       todos: loadedTodos
+  //     })
+  //   }
+  // }
+
+  // componentDidUpdate(prevProps, prevState) {
+  //   if(prevState.todos !== this.state.todos) {
+  //     const temp = JSON.stringify(this.state.todos)
+  //     localStorage.setItem("todos", temp)
+  //   }            
+  // }
+
+
+  
+ 
